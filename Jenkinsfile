@@ -1,10 +1,7 @@
 pipeline {
     agent none 
     // properties([parameters([choice(choices: ['UAT', 'PROD'], description: 'Choose env', name: 'Env')])])
-    parameters {
-              string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?'),
-              booleanParam(name: 'DEBUG_BUILD', defaultValue: true, description: '') 
-    }
+    parameters([booleanParam(defaultValue: false, description: '', name: ''), string(defaultValue: '', description: '', name: '')])
 
 
     stages {
