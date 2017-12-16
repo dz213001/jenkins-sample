@@ -1,6 +1,6 @@
 pipeline {
   agent none 
-    properties([parameters([choice(choices: ['UAT', 'PROD'], description: 'Choose env', name: 'Env')])])
+    options([parameters([choice(choices: ['UAT', 'PROD'], description: 'Choose env', name: 'Env')])])
     stages {
       stage('Example Build') {
         steps {
