@@ -1,20 +1,10 @@
 pipeline {
     agent none 
-    // properties([parameters([choice(choices: ['UAT', 'PROD'], description: 'Choose env', name: 'Env')])])
-      properties([
-          parameters([
-            booleanParam(
-              defaultValue: false,
-              description: 'isFoo should be false',
-              name: 'isFoo'
-              ),
-            booleanParam(
-              defaultValue: true,
-              description: 'isBar should be true',
-              name: 'isBar'
-              ),
-          ])
-      ])
+      parameters {
+        string(defaultValue: "TEST", description: 'What environment?', name: 'userFlag')
+          // choices are newline separated
+          choice(choices: 'US-EAST-1\nUS-WEST-2', description: 'What AWS region?', name: 'region')
+      }
 
 
     stages {
