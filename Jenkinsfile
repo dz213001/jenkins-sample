@@ -4,6 +4,10 @@ pipeline {
     parameters {
               string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
     }
+
+    parameters { booleanParam(name: 'DEBUG_BUILD', defaultValue: true, description: '') }
+
+
     stages {
       stage('Example Build') {
         steps {
