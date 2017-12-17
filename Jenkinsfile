@@ -1,7 +1,7 @@
 pipeline {
     agent none 
     parameters {
-        choice(choices: 'DEV\UAT\PROD\', description: 'ENV', name: 'env')
+        choice(choices: 'DEV\nUAT\nPROD', description: 'ENV', name: 'env')
     }
     
     triggers {
